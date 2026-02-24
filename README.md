@@ -317,7 +317,7 @@ OK: Correlation affects failure probability (as expected)
 See LICENSE.
 
 ## Contributing
-We welcome contributions! Please see [CONTRIBUTING.md](https://contributing.md/) for guidelines. Check how D-vine copula algorithm is applied for seismic reliability analysis in reference [4] for example.
+We welcome contributions! Please see CONTRIBUTING for guidelines. Check how D-vine copula algorithm is applied for seismic reliability analysis in reference [4] for example.
 
 ## Support
 For questions, issues, or feature requests either open an issue on GitHub Issues or contact me directly through email at gpapazafeiropoulos@yahoo.gr

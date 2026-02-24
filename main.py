@@ -461,19 +461,11 @@ class DVineStructure:
                     best_copula = copula
 
             # Check if the best copula is close to independence
-            if best_copula.family == CopulaFamily.GAUSSIAN and abs(best_copula.theta) < 0.01:
-                best_copula = PairCopula(CopulaFamily.INDEPENDENCE)
-                best_copula.theta = 0.0
-                best_copula._calculate_fit_metrics(u1, u2)
-            elif best_copula.family == CopulaFamily.CLAYTON and best_copula.theta < 0.01:
-                best_copula = PairCopula(CopulaFamily.INDEPENDENCE)
-                best_copula.theta = 0.0
-                best_copula._calculate_fit_metrics(u1, u2)
-            elif best_copula.family == CopulaFamily.GUMBEL and best_copula.theta < 1.01:
-                best_copula = PairCopula(CopulaFamily.INDEPENDENCE)
-                best_copula.theta = 0.0
-                best_copula._calculate_fit_metrics(u1, u2)
-            elif best_copula.family == CopulaFamily.FRANK and abs(best_copula.theta) < 0.01:
+            if (best_copula.family == CopulaFamily.GAUSSIAN and abs(best_copula.theta) < 0.01) or \
+            (best_copula.family == CopulaFamily.CLAYTON and best_copula.theta < 0.01) or \
+            (best_copula.family == CopulaFamily.GUMBEL and best_copula.theta < 1.01) or \
+            (best_copula.family == CopulaFamily.FRANK and abs(best_copula.theta) < 0.01):
+                
                 best_copula = PairCopula(CopulaFamily.INDEPENDENCE)
                 best_copula.theta = 0.0
                 best_copula._calculate_fit_metrics(u1, u2)
